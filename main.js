@@ -41,9 +41,23 @@ homeContactBtn.addEventListener('click', () => {
     scrollIntoView("#contact");
 })
 
-//home 영역 scroll내리면 투명해지기
+//home 영역  scroll내리면 '요소들만' 투명해지기
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
     home.style.opacity = 1 - window.scrollY / homeHeight;
+})
+
+//arrow btn 
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if (window.scrollY > homeHeight / 2) {
+        arrowUp.classList.add('visible');
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+})
+
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home');
 })
