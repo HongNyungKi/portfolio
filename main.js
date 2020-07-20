@@ -13,8 +13,6 @@ document.addEventListener('scroll', () => {
     }
 });
 
-
-
 //메뉴선택시 해당메뉴로 스크롤자동 이동하기
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
@@ -34,6 +32,15 @@ navbarMenu.addEventListener('click', (event) => {
         scrollIntoView(link);
     }
 })
+
+//navbar toggle btn
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+})
+
+
+
 
 //home의 contact btn누르면 contact section으로 이동하기
 const homeContactBtn = document.querySelector('.home__contact');
@@ -61,3 +68,5 @@ document.addEventListener('scroll', () => {
 arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 })
+
+//Projects
